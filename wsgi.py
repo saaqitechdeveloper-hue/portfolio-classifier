@@ -1,4 +1,8 @@
-from a2wsgi import ASGIMiddleware
-from api.app_onnx import app
+import sys
+import os
 
-application = ASGIMiddleware(app)
+path = '/home/saaqitech/portfolio-classifier'
+if path not in sys.path:
+    sys.path.append(path)
+
+from api.app_flask import app as application
